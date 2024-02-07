@@ -6,9 +6,15 @@ type NavbarProps = {
   NavigationLinks: Array<{ name: string }>;
 };
 export const Navbar = ({ NavigationLinks }: NavbarProps) => {
+  const scrollToSection = (id: string) => {
+    const componentToSmoothScroll = document.getElementById(id);
+    componentToSmoothScroll?.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   return (
-    <nav className="fixed  p-4 right ml-0 mr-0 text-sm justify-between items-center bg-[#171023] shadow-2xl w-full flex gap-8 z-50">
+    <nav className="fixed  px-4 ml-0 mr-0 text-sm justify-between items-center bg-[#171023] shadow-2xl w-full flex gap-8 z-50">
       <section className="font-kalam flex">
         Caio <strong>Theodoro </strong>
       </section>
@@ -22,34 +28,20 @@ export const Navbar = ({ NavigationLinks }: NavbarProps) => {
         onClick={() => setIsMenuOpen(!isMenuOpen)}
       />
       {isMenuOpen && (
-        <div className="absolute h-screen top-20 bg-yellow-300 right-0 animate-[navbar_.3s_ease-out] w-[80%] z-10 backdrop-blur-xl">
-          <ul className="flex flex-col gap-10 h-full justify-start ">
+        <div
+          className={`absolute h-screen top-12 right-0 animate-[navbarIn_.3s_ease-out] w-[80%] z-10 backdrop-blurmd`}
+        >
+          <ul className="flex flex-col gap-10 h-full justify-start bg-[#231636]">
             {NavigationLinks.map((link) => {
               return (
                 link && (
-                  <li className="shadow-md min-h-8 text-xl flex p-4 items-center ">
+                  <li className="shadow-sm text-lg p-4 flex items-center ">
                     <a
                       href="#"
                       onClick={(e) => {
+                        e.preventDefault();
                         setIsMenuOpen(false);
-                        console.log();
-                        const componentToSmoothScroll = document.getElementById(
-                          link.name
-                        );
-                        const headerOffset = 0;
-                        const elementPosition =
-                          componentToSmoothScroll?.getBoundingClientRect().top;
-
-                        if (!elementPosition) return;
-
-                        const offsetPosition =
-                          elementPosition + window.pageYOffset - headerOffset;
-
-                        console.log("!@# component", componentToSmoothScroll);
-                        window.scrollTo({
-                          top: offsetPosition,
-                          behavior: "smooth",
-                        });
+                        scrollToSection(link.name);
                       }}
                     >
                       {link.name}
