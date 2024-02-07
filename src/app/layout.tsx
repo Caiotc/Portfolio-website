@@ -1,9 +1,17 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Kalam, Heebo } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
-
+const heebo = Heebo({
+  weight: ["400", "700", "300"],
+  subsets: ["latin"],
+  variable: "--font-heebo",
+});
+const kalam = Kalam({
+  weight: ["400", "700", "300"],
+  subsets: ["latin"],
+  variable: "--font-kalam",
+});
 export const metadata: Metadata = {
   title: "My Portfolio Website",
   description: "Caio Theodoro's portfolio website",
@@ -16,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${heebo.variable} ${kalam.variable}`}>{children}</body>
     </html>
   );
 }
