@@ -29,7 +29,7 @@ export const Navbar = ({ NavigationLinks }: NavbarProps) => {
       />
       {isMenuOpen && (
         <div
-          className={`absolute h-screen top-12 right-0 animate-[navbarIn_.3s_ease-out] w-[80%] z-10 backdrop-blurmd`}
+          className={`absolute h-screen top-12 right-0 animate-[navbar_.3s_ease-out] w-[80%] z-10 backdrop-blurmd`}
         >
           <ul className="flex flex-col gap-10 h-full justify-start bg-[#231636]">
             {NavigationLinks.map((link) => {
