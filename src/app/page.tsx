@@ -91,11 +91,12 @@ export default function Home() {
 
           <section
             id="About"
-            className="flex flex-col  justify-center  items-center  min-h-96  bg-slate-800 rounded-lg w-full p-4 min-w-80          
+            className="flex flex-col  justify-center  items-center  min-h-96  bg-slate-800 rounded-lg w-full p-8 min-w-80          
           "
           >
             <div className="flex flex-col gap-4">
               <div className="flex flex-col gap-4 flex-grow">
+                <div className="w-full h-full flex justify-start gap-4 items-baseline"></div>
                 <div className="w-full h-full flex justify-start gap-4 items-baseline">
                   <Image
                     src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dot-net/dot-net-plain-wordmark.svg"
@@ -135,21 +136,33 @@ export default function Home() {
                     height={30}
                   />
                 </div>
-                <span className="text-4xl font-kalam">
-                  {`About me`} <br />
-                </span>
-                <span className="text-xs text-left sm:text-base font-heebo">
-                  {`                I'm Caio Theodoro, a software engineer based in Brazil.`}
-                </span>
-                <span className="text-xs text-left sm:text-base font-heebo">
-                  I have 4 years of experience in the software industry,
-                  specializing in building applications with React and .NET. As
-                  a computer engineering student, I am a fast learner and
-                  completely passionate about software engineering. I am always
-                  eager to explore new technologies and best practices to
-                  enhance my skills. If you have any exciting projects, feel
-                  free to reach out!
-                </span>
+                <div className="flex flex-col items-center justify-normal sm:flex-row">
+                  <div>
+                    <span className="text-4xl font-kalam">
+                      {`About me`} <br />
+                    </span>
+                    <span className="text-xs text-left sm:text-base font-heebo">
+                      {`I'm Caio Theodoro, a software engineer based in Brazil.`}
+                    </span>
+                    <span className="text-xs text-left sm:text-base font-heebo">
+                      I have 4 years of experience in the software industry,
+                      specializing in building applications with React and .NET.
+                      As a computer engineering student, I am a fast learner and
+                      completely passionate about software engineering. I am
+                      always eager to explore new technologies and best
+                      practices to enhance my skills. If you have any exciting
+                      projects, feel free to reach out!
+                    </span>
+                  </div>
+
+                  <Image
+                    className="align-start"
+                    src="/coding.svg"
+                    alt="computer_icon"
+                    width={300}
+                    height={300}
+                  />
+                </div>
               </div>
             </div>
           </section>
