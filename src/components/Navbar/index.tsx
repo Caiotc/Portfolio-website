@@ -24,6 +24,7 @@ export const Navbar = () => {
     const componentToSmoothScroll = document.getElementById(id);
     componentToSmoothScroll?.scrollIntoView({
       behavior: "smooth",
+      block: "center",
     });
   }, []);
 
