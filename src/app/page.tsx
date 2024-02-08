@@ -139,7 +139,7 @@ export default function Home() {
                 {`About me`} <br />
               </span>
               <span className="text-xs text-left sm:text-base font-heebo">
-                I'm Caio Theodoro, a software engineer based in Brazil.
+                {`                I'm Caio Theodoro, a software engineer based in Brazil.`}
               </span>
               <span className="text-xs text-left sm:text-base font-heebo">
                 I have 4 years of experience in the software industry,
